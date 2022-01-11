@@ -1,0 +1,17 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">MyApp</string>
+    <string name="add_max_trees">Add max trees</string>
+    <string name="orchard">Orchard</string>
+    <string name="block">Block</string>
+    <string name="rate_type">Rate Type</string>
+    <string name="piece_rate">Piece rate</string>
+    <string name="wages">Wages</string>
+    <string name="job_type">Canker Removal will be paid by wages in this timesheet</string>
+    <string name="tree_for_row">Trees for row 4</string>
+    <string name="apply_to_all">APPLY TO ALL</string>
+    <string name="per_hour">/hour</string>
+    <string name="rate">Rate</string>
+    <string name="task_list_title">Update Rate and Volumn</string>
+    <string name="confirm">Confirm</string>
+
+</resources>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_navigation"
+    app:startDestination="@+id/navigation_list_tasks">
+
+
+    <fragment
+        android:id="@+id/navigation_list_tasks"
+        android:name="com.hectre.ez.ui.tasks.TaskListFragment"
+        android:label="@string/task_list_title"
+        tools:layout="@layout/fragment_task_list" />
+
+
+
+</navigation>

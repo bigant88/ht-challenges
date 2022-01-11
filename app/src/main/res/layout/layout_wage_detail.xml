@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:showIn="@layout/recycler_task_item">
+
+    <TextView
+        android:id="@+id/job_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/job_type"
+        android:textColor="@android:color/holo_orange_dark"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/row_collections"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/job_name">
+
+        <TextView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/round_fill_gray_background_selector"
+            android:gravity="center"
+            android:text="3" />
+
+        <TextView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/round_fill_gray_background_selector"
+            android:gravity="center"
+            android:text="4" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tree_for_row_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tree_for_row"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/row_collections" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/tree_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_fill_gray_background"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tree_for_row_label">
+
+        <TextView
+            android:id="@+id/separator_line"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="/"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/input_tree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:text="3"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/text_size_l4"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/separator_line"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/max_tree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="555"
+            android:textSize="@dimen/text_size_l4"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/separator_line"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tree_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="(250)"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tree_layout" />
+    <TextView
+        app:layout_constraintTop_toBottomOf="@id/tree_layout"
+        app:layout_constraintEnd_toStartOf="@+id/tree_number"
+        android:layout_width="wrap_content"
+        android:id="@+id/other_name"
+        tools:text="Yi Wan"
+        android:layout_height="wrap_content"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

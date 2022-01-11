@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_normal"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_staff_info" />
+
+    <include layout="@layout/layout_orchard_info" />
+
+    <include layout="@layout/layout_rate_type" />
+
+    <include layout="@layout/layout_piece_rate" />
+
+    <include layout="@layout/layout_wage_detail" />
+</LinearLayout>

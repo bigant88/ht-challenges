@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:opacity="opaque"> <!-- android:opacity="opaque" should be here -->
+    <item>
+        <!--this is your background, you can use color, gradient etc.-->
+        <color android:color="@color/colorPrimary" />
+        <shape>
+              <gradient
+                   android:angle="315"
+                   android:endColor="@color/colorPrimary"
+                   android:startColor="@color/colorPrimary"
+                   android:type="linear"/>
+        </shape>
+    </item>
+
+<!--    <item>-->
+<!--        <bitmap-->
+<!--            android:gravity="center"-->
+<!--            android:src="@drawable/ic_hectre_ez" />-->
+<!--    </item>-->
+</layer-list>

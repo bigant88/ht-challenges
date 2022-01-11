@@ -1,0 +1,156 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: "androidx.navigation.safeargs.kotlin"
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        applicationId "com.hectre.ez"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+// To inline the bytecode built with JVM target 1.8 into
+// bytecode that is being built with JVM target 1.6. (e.g. navArgs)
+
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+}
+
+dependencies {
+    // App dependencies
+    implementation "androidx.appcompat:appcompat:$appCompatVersion"
+//    implementation "androidx.cardview:cardview:$cardVersion"
+    implementation "com.google.android.material:material:$materialVersion"
+    implementation "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
+    implementation "androidx.recyclerview:recyclerview:$recyclerViewVersion"
+    implementation "androidx.annotation:annotation:$androidXAnnotations"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
+    implementation "com.jakewharton.timber:timber:$timberVersion"
+    implementation "androidx.legacy:legacy-support-v4:$androidXLegacySupport"
+    implementation "androidx.test.espresso:espresso-idling-resource:$espressoVersion"
+    implementation "androidx.room:room-runtime:$roomVersion"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation "androidx.lifecycle:lifecycle-extensions:$archLifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$archLifecycleVersion"
+    implementation "androidx.preference:preference-ktx:$preferences_manager"
+    kapt "androidx.room:room-compiler:$roomVersion"
+    implementation "de.hdodenhof:circleimageview:$circleImageViewVersion"
+
+
+    // Architecture Components
+    implementation "androidx.room:room-runtime:$roomVersion"
+    kapt "androidx.room:room-compiler:$roomVersion"
+    implementation "androidx.room:room-ktx:$roomVersion"
+    implementation "androidx.lifecycle:lifecycle-extensions:$archLifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$archLifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$archLifecycleVersion"
+    implementation "androidx.navigation:navigation-fragment-ktx:$navigationVersion"
+    implementation "androidx.navigation:navigation-ui-ktx:$navigationVersion"
+
+    // Dependencies for local unit tests
+    testImplementation "junit:junit:$junitVersion"
+//    testImplementation "org.mockito:mockito-core:$mockitoVersion"
+//    testImplementation "org.hamcrest:hamcrest-all:$hamcrestVersion"
+//    testImplementation "androidx.arch.core:core-testing:$archTestingVersion"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutinesVersion"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
+
+//    testImplementation "org.robolectric:robolectric:$robolectricVersion"
+//    testImplementation "androidx.test.espresso:espresso-core:$espressoVersion"
+//    testImplementation "androidx.test.espresso:espresso-contrib:$espressoVersion"
+//    testImplementation "androidx.test.espresso:espresso-intents:$espressoVersion"
+    testImplementation "com.google.truth:truth:$truthVersion"
+
+    // Dependencies for Android unit tests
+    androidTestImplementation "junit:junit:$junitVersion"
+//    androidTestImplementation "org.mockito:mockito-core:$mockitoVersion"
+    androidTestImplementation "com.linkedin.dexmaker:dexmaker-mockito:$dexMakerVersion"
+    androidTestImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutinesVersion"
+
+    // AndroidX Test - JVM testing
+    testImplementation "androidx.test:core-ktx:$androidXTestCoreVersion"
+//    testImplementation "androidx.test.ext:junit-ktx:$androidXTestExtKotlinRunnerVersion"
+//    testImplementation "androidx.test:rules:$androidXTestRulesVersion"
+    // Once https://issuetracker.google.com/127986458 is fixed this can be testImplementation
+    debugImplementation "androidx.fragment:fragment-testing:$fragmentVersion"
+    implementation "androidx.test:core:$androidXTestCoreVersion"
+    implementation "androidx.fragment:fragment:$fragmentVersion"
+    implementation "com.github.crux-lab:sectioned-recycler-view:1.1.1"
+
+    // AndroidX Test - Instrumented testing
+    androidTestImplementation "androidx.test:core-ktx:$androidXTestCoreVersion"
+    androidTestImplementation "androidx.test.ext:junit-ktx:$androidXTestExtKotlinRunnerVersion"
+    androidTestImplementation "androidx.test:rules:$androidXTestRulesVersion"
+    androidTestImplementation "androidx.room:room-testing:$roomVersion"
+    debugImplementation "androidx.arch.core:core-testing:$archTestingVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espressoVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-contrib:$espressoVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-intents:$espressoVersion"
+    androidTestImplementation "androidx.test.espresso.idling:idling-concurrent:$espressoVersion"
+    androidTestImplementation "org.robolectric:annotations:$robolectricVersion"
+    implementation "androidx.test.espresso:espresso-idling-resource:$espressoVersion"
+
+    // Resolve conflicts between main and test APK:
+    androidTestImplementation "androidx.annotation:annotation:$androidXAnnotations"
+    androidTestImplementation "androidx.legacy:legacy-support-v4:$androidXLegacySupport"
+    androidTestImplementation "androidx.recyclerview:recyclerview:$recyclerViewVersion"
+    androidTestImplementation "androidx.appcompat:appcompat:$appCompatVersion"
+    androidTestImplementation "com.google.android.material:material:$materialVersion"
+
+    // Kotlin
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
+    implementation "androidx.fragment:fragment-ktx:$fragmentKtxVersion"
+
+    //TimelineView
+    implementation "com.github.vipulasri:timelineview:$timelineViewVersion"
+
+    //debug DB
+    debugImplementation "com.amitshekhar.android:debug-db:$debugDbVersion"
+
+    // retrofit for networking
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$logging_retrofit_version"
+    implementation "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:$retrofit_coroutine_version"
+    implementation "com.squareup.retrofit2:converter-moshi:$retrofit_version"
+
+    // moshi for parsing the JSON format
+    implementation "com.squareup.moshi:moshi:$moshi_version"
+    implementation "com.squareup.moshi:moshi-kotlin:$moshi_version"
+    kapt "com.squareup.moshi:moshi-kotlin-codegen:$moshi_version"
+
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutinesVersion"
+    // Using JCenter
+    implementation 'eu.davidea:flexible-adapter:5.1.0'
+    implementation 'eu.davidea:flexible-adapter-ui:1.0.0'
+    implementation 'eu.davidea:flexible-adapter-livedata:1.0.0-b3'
+    // From 1.0.0-b3, library is compiled with data binding v2
+    implementation 'eu.davidea:flexible-adapter-databinding:1.0.0'
+}
